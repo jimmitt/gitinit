@@ -1,373 +1,233 @@
 @charset "UTF-8";
-/*  We use https://systemfontstack.com/ for all 3 cases */
-html > body {
-  overflow-x: auto;
-  overflow-y: scroll;
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
-    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
-    sans-serif;
+
+:root {
+  --ink: #24292f;
+  --muted: #57606a;
+  --paper: #f7faec;
+  --panel: #ffffff;
+  --accent: #a66f30;
+  --line: #d8dee4;
+  --link: #0969da;
 }
+
+* { box-sizing: border-box; }
+
+html { overflow-y: scroll; }
+
 body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
   margin: 0;
-  padding: 0;
-  /* TODO: Switch to css instead */
-  background-image: url(/i/background.png);
-  background-repeat: repeat-y;
-  background-color: #f7faec;
-}
-a {
-  color: #0f5491;
-}
-h1 {
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  color: #b58145;
-  font-size: 39px;
-  font-weight: 700;
-  padding: 7px 0;
-}
-h2 {
-  padding-top: 1em;
-  color: #b58145;
-}
-body img {
-  max-width: 700px;
-}
-header {
-  width: 100%;
-  height: 180px;
-  position: relative;
-  top: -10px;
-}
-header div.t {
-  padding-left: 310px;
-  padding-top: 30px;
-  width: 600px;
-  font-size: 18px;
-  line-height: 25px;
-  color: #000;
-}
-header div.tInterior {
-  padding-left: 310px;
-  padding-top: 70px;
-  width: 600px;
-  font-size: 18px;
-  line-height: 25px;
-  color: #000;
-}
-div.tInterior a img {
-  position: absolute;
-  top: 0;
-  left: 69px;
-}
-header div.t div.h {
-  font-size: 45px;
-  font-weight: 700;
-  line-height: 65px;
-}
-.mainnav {
-  width: 920px;
-  height: auto;
-  margin-top: 60px;
-}
-.mainnav a {
-  display: block;
-  float: left;
-  height: 176px;
-  width: 151px;
-  padding: 0;
-  text-decoration: none;
-}
-.mainnav .button a.zero {
-  background: transparent url(/i/homenav-1-1.png)
-    no-repeat bottom left;
-}
-.mainnav .button a.one {
-  background: transparent url(/i/homenav-2-1.png)
-    no-repeat bottom left;
-}
-.mainnav .button a.two {
-  background: transparent url(/i/homenav-3-1.png)
-    no-repeat bottom left;
-}
-.mainnav .button a.three {
-  background: transparent url(/i/homenav-4-1.png)
-    no-repeat bottom left;
-}
-.mainnav .button a.four {
-  background: transparent url(/i/homenav-5-1.png)
-    no-repeat bottom left;
 }
 
-.mainnav .button a.five {
-  background: transparent url(/i/homenav-6-1.png)
-    no-repeat bottom left;
-}
-.mainnav .button a:hover {
-  background-position: top left;
-}
+a { color: var(--link); }
+a:hover { text-decoration-thickness: 2px; }
+
 .toptop {
-  background-color: #333;
-  height: 50px;
-  width: 100%;
-  margin: 0;
-  position: relative;
-  z-index: 100;
-  filter: drop-shadow(0 2px 5px grey);
+  background: var(--ink);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
 }
+
 .toptop ul {
-  background-color: #333;
-  height: 25px;
-  margin: 0;
-}
-.toptop ul li {
-  text-indent: 0;
-  background-color: #333;
-  float: right;
-  color: #fff;
-  font-size: 12px;
-  width: 100px;
+  display: flex;
+  gap: 1.5rem;
   list-style: none;
-  padding-top: 5px;
-  padding-right: 5px;
-  padding-bottom: 5px;
-  text-align: center;
-  vertical-align: middle;
+  margin: 0 auto;
+  max-width: 980px;
+  padding: .8rem 1.5rem;
 }
-.toptop a,
-.toptop a:link,
-.toptop a:visited {
+
+.toptop a {
+  color: #fff;
+  font-size: .85rem;
   text-decoration: none;
-  color: #fff;
 }
-.toptop ul li a:hover {
-  color: #999;
-}
+
+.toptop a:hover,
+.toptop a:focus-visible { color: #d0d7de; }
+
 main {
-  width: 900px;
-  margin-left: 70px;
-  height: auto;
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 0 1.5rem 4rem;
 }
-.tip {
-  float: left;
-  margin: auto 0 0 -250px;
-  position: relative;
-  z-index: 2;
-  width: 250px;
-  position: relative;
-  background: url(/i/cheattop.png) top left no-repeat,
-    url(/i/cheatbot.png) bottom left no-repeat;
+
+header { padding: 3rem 0 2rem; }
+
+.tInterior {
+  align-items: center;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 180px minmax(0, 660px);
 }
-.tip:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 58px;
-  right: 0;
-  bottom: 41px;
-  left: 0;
-  background: url(/i/cheatmiddle.png) top left repeat-y;
+
+.tInterior > p {
+  font-size: 1.15rem;
+  margin: 0;
 }
-.tip dfn {
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
-    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
-    sans-serif;
-  font-style: normal;
-  position: static;
-  font-size: 20px;
+
+.wordmark {
+  color: var(--ink);
+  font-size: 2.75rem;
+  font-weight: 300;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.wordmark span {
+  color: var(--accent);
+  display: block;
+  font-size: 4.5rem;
+  font-weight: 800;
+}
+
+.mainnav {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 1rem;
+}
+
+.mainnav a {
+  background: var(--panel);
+  border: 1px solid #d7c6ae;
+  border-radius: .5rem;
+  color: var(--ink);
+  min-height: 155px;
+  padding: 1.4rem;
+  text-decoration: none;
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+
+.mainnav a:hover,
+.mainnav a:focus-visible {
+  box-shadow: 0 6px 18px rgb(0 0 0 / 15%);
+  transform: translateY(-2px);
+}
+
+.mainnav strong {
+  color: var(--accent);
+  display: block;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.mainnav span {
+  display: block;
+  font-size: 1.15rem;
   font-weight: 700;
-  padding-left: 40px;
-  padding-top: 20px;
-  display: inline-block;
-  color: #b58145;
+  margin-top: 1rem;
 }
-.tip h4 {
-  display: inline;
+
+article { max-width: 760px; }
+
+article > h1 {
+  border-block: 1px solid var(--line);
+  color: var(--accent);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  line-height: 1.2;
+  margin: 0 0 2rem;
+  padding: .5rem 0;
 }
-.tip p {
-  font-size: 18px;
-  line-height: 20px;
-  margin-top: 10px;
-  min-height: 50px;
-  padding: 0 45px 25px 15px;
+
+.content {
+  font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  font-size: 1.18rem;
 }
-div.content {
-  font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
-    Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
-    Segoe UI Emoji, Segoe UI Symbol;
-  font-size: 20px;
-  width: 642px;
-  float: left;
-  margin-left: 240px;
+
+h2 {
+  color: var(--accent);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.25;
+  padding-top: 1.25rem;
 }
+
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+}
+
+code {
+  background: rgb(175 184 193 / 20%);
+  border-radius: .2rem;
+  font-size: .88em;
+  padding: .1em .25em;
+}
+
 pre {
-  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
-    monospace;
-  margin: 0;
-  padding: 10px 9px 25px 10px;
-  font-size: 14px;
-  position: relative;
-  z-index: 2;
-  background: url(/i/code-anonymous-top.png) top left
-      no-repeat,
-    url(/i/code-anonymous-bottom.png) bottom left
-      no-repeat;
-}
-pre:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 41px;
-  right: 0;
-  bottom: 37px;
-  left: 0;
-  background: url(/i/code-anonymous-middle.png) top left
-    repeat-y;
-}
-pre .prompt {
-  color: #696969;
-}
-pre.joel {
-  background: url(/i/code-joel-top.png) top left
-      no-repeat,
-    url(/i/code-joel-bottom.png) bottom left no-repeat;
-}
-pre.joel:before {
-  top: 40px;
-  background: url(/i/code-joel-middle.png) top left
-    repeat-y;
-}
-pre.rose {
-  background: url(/i/code-rose-top.png) top left
-      no-repeat,
-    url(/i/code-rose-bottom.png) bottom left no-repeat;
-}
-pre.rose:before {
-  top: 40px;
-  background: url(/i/code-rose-middle.png) top left
-    repeat-y;
+  background: var(--ink);
+  border-radius: .45rem;
+  color: #f0f3f6;
+  font-size: .88rem;
+  line-height: 1.55;
+  overflow-x: auto;
+  padding: 1rem 1.15rem;
 }
 
-/* Styles for diffs */
-.diff {
-  width: 500px;
-  border: solid 1px #000;
-}
-.diff h3 {
-  font-size: 14px;
-  margin: 0;
-  height: 21px;
-  background-color: #666;
-  border: solid 1px #000;
-  color: #fff;
-  font-weight: 700;
-  padding-left: 15px;
+pre code {
+  background: transparent;
+  padding: 0;
 }
 
-.diff p{
-  padding: 5px 10px;
-  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
-  font-size: 14px;
+table {
+  border-collapse: collapse;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  width: 100%;
 }
 
-.diff ins {
-  text-decoration: none; /* default underlines */
-  background-color: #ff0;
+th, td {
+  border: 1px solid var(--line);
+  padding: .65rem;
+  text-align: left;
+  vertical-align: top;
 }
-
-/*
-  See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins#accessibility_concerns
-  and https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del#accessibility_concerns
-  The presence of the <ins>/<del> element is not announced by most screen reading technology
-  in its default configuration. It can be made to be announced by using the CSS
-  content property, along with the ::before and ::after pseudo-elements.
-*/
-ins::before,
-ins::after,
-del::before,
-del::after {
-  clip-path: inset(100%);
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-ins::before {
-  content: " [insertion start] ";
-}
-
-ins::after {
-  content: " [insertion end] ";
-}
-
-
-del::before {
-  content: " [deletion start] ";
-}
-
-del::after {
-  content: " [deletion end] ";
-}
-
 
 footer {
-  margin-top: 30px;
-  width: 630px;
-  height: 65px;
-  border-top: solid 1px #ccc;
-  padding-top: 10px;
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
-    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
-    sans-serif;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  display: grid;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  gap: 1rem;
+  grid-template-columns: auto 1fr auto;
+  margin-top: 3rem;
+  padding-top: 1rem;
 }
-div.footernav {
-  float: left;
-  height: 45px;
-  padding: 10px 10px;
-  vertical-align: middle;
-  line-height: 45px;
-}
-#home,
-#next {
-  background-color: #666;
-  font-size: 30px;
-  font-weight: 800;
-  border-radius: 4px;
-}
-#next {
-  float: right;
-}
-#home:hover,
-#next:hover {
-  background-color: #9b9b9b;
-}
-footer a {
-  text-decoration: none;
+
+.footernav { text-align: center; }
+
+#home a,
+#next a {
+  background: var(--muted);
+  border-radius: .3rem;
   color: #fff;
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: .55rem .8rem;
+  text-decoration: none;
 }
-#comingup,
-#comingup a {
-  padding: 0 10px;
-  font-size: 17px;
-  line-height: 18px;
-  color: #b58145 !important;
-  width: 350px;
-  text-align: center;
+
+#home a:hover,
+#next a:hover { background: var(--ink); }
+
+#comingup {
+  color: var(--accent);
+  font-size: .95rem;
   font-weight: 700;
 }
-#comingup a {
-  text-decoration: underline;
+
+@media (max-width: 700px) {
+  .toptop ul { flex-wrap: wrap; gap: .5rem 1rem; }
+  .tInterior { gap: 1.5rem; grid-template-columns: 1fr; }
+  .wordmark span { display: inline; font-size: inherit; }
+  .mainnav { grid-template-columns: repeat(2, 1fr); }
 }
-div.about {
-  float: left;
-  width: 350px;
-  margin-left: 30px;
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
-    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
-    sans-serif;
-  font-size: 15px;
-  line-height: 21px;
+
+@media (max-width: 460px) {
+  main { padding-inline: 1rem; }
+  .mainnav { grid-template-columns: 1fr; }
+  footer { grid-template-columns: 1fr 1fr; }
+  #comingup { display: none; }
 }

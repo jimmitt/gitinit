@@ -1,14 +1,13 @@
 <header>
   <div class="tInterior">
-    <a href="index.html">
-      <img src="i/logo.png" alt="HgInit Logo" >
+    <a class="wordmark" href="index.html" aria-label="GitInit home">
+      <span>Git</span>Init
     </a>
 
-  {% if page.longdescription %}
-  {{page.longdescription | markdownify}}
-  {% else %}
-  {{page.description | markdownify}}
-  {% endif %}
-
+    {% if page.longdescription %}
+    {{page.longdescription | markdownify}}
+    {% else %}
+    {{page.description | markdownify}}
+    {% endif %}
   </div>
 </header>
