@@ -3,6 +3,9 @@ baseurl: "/gitinit"
 title: "GitInit"
 description: "A friendly, practical introduction to Git"
 exclude:
+  - tests
+  - IMAGE-PROMPTS.md
+  - TRANSLATION-PROGRESS.md
   - README.md
   - HACKING.md
   - artsrc
