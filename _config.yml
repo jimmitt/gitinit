@@ -1,5 +1,5 @@
-url: "https://jimmitt.github.io"
-baseurl: "/gitinit"
+url: "https://gitinit.org"
+baseurl: ""
 title: "GitInit"
 description: "A friendly, practical introduction to Git"
 exclude:
